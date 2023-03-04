@@ -16,7 +16,7 @@ func StartWebServer() {
 	// 启动服务
 	port := config.LoadConfig().Port
 	portString := strconv.Itoa(port)
-	err := router.Run(":" + portString)
+	err := router.Run("127.0.0.1:" + portString)
 	if err != nil {
 		logger.Danger("run webserver error %s", err)
 		return
